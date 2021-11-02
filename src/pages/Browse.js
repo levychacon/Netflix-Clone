@@ -1,8 +1,17 @@
 import React from 'react'
+import BrowseContainer from '../containers/browse'
+import {useContent} from '../hooks/use-content'
+import {selectionFilter} from '../utils/selection-filter'
+
 
 export const Browse = () => {
+    const {series} = useContent('series')
+    const {films} = useContent('films')
+  
+    const slides = selectionFilter({series, films})
+    console.log(slides)
     return (
-        <p>Hello from browse</p>
+       <BrowseContainer slides={slides}/>
     )
 }
 
