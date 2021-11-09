@@ -1,6 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Loading } from "../components/loading";
 import { Header } from "../components/header";
+import {FooterContainer} from "./footer"
+import {Player} from '../components/player'
 import { Card } from "../components/card";
 import { SelectProfileContainer } from "./profile";
 import { FirebaseContext } from "../context/firebase";
@@ -92,15 +94,17 @@ export const BrowseContainer = ({ slides }) => {
             </Card.Entities>
 
             <Card.Feature category={category}>
-              {/* <Player>
+              <Player>
                 <Player.Button></Player.Button>
                 <Player.Video src="/videos/bunny.mp4"/>
-              </Player> */}
-              <p>hello</p>
+              </Player>
+              
             </Card.Feature>
           </Card>
         ))}
       </Card.Group>
+
+      <FooterContainer/>
     </>
   ) : (
     <SelectProfileContainer user={user} setProfile={setProfile} />
